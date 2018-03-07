@@ -1,0 +1,15 @@
+E:\Temp\DragonBallMatching\DragonBallMatching\bin\Debug\DragonBallMatching.exe.config
+E:\Temp\DragonBallMatching\DragonBallMatching\bin\Debug\DragonBallMatching.exe
+E:\Temp\DragonBallMatching\DragonBallMatching\bin\Debug\DragonBallMatching.pdb
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.csprojResolveAssemblyReference.cache
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\MainWindow.g.cs
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\App.g.cs
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching_MarkupCompile.cache
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching_MarkupCompile.lref
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\MainWindow.baml
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.g.resources
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.Properties.Resources.resources
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.csproj.GenerateResource.Cache
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.csproj.CoreCompileInputs.cache
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.exe
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.pdb
