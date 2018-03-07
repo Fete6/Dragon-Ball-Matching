@@ -13,3 +13,7 @@ E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.cspro
 E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.csproj.CoreCompileInputs.cache
 E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.exe
 E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\DragonBallMatching.pdb
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\Pages\Login.g.cs
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\Pages\Login.baml
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\Pages\NewAccount_01.g.cs
+E:\Temp\DragonBallMatching\DragonBallMatching\obj\Debug\Pages\NewAccount_01.baml

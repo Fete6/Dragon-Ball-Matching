@@ -1,5 +1,4 @@
-﻿using DragonBallMatching.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DragonBallMatching {
+namespace DragonBallMatching.Pages
+{
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class Login : Page
+    {
+        public Login()
+        {
             InitializeComponent();
+        }
 
-            // Todo delete
-            Main.Content = new Login();
-
+        private void Btn_CreateAccount_Click(object sender, RoutedEventArgs e) {
+            Main.Content = new NewAccount_01();
         }
     }
 }

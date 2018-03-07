@@ -9,51 +9,13 @@
 
     <!--Login UI-->
     <Grid >
-        <Grid.Background>
-            <ImageBrush ImageSource="/images/loginbackground.jpg" Stretch="UniformToFill" />
-        </Grid.Background>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" MinWidth="150"/>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" MinHeight="400"/>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <StackPanel Grid.Column="1" Grid.Row="1" >
-            <!--Logo-->
-            <Image Source="/images/logo.png"  Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-
-            <!--Username-->
-            <TextBlock Text="Username" TextBlock.Foreground="White" Margin="5 0 0 5 " />
-            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
-                <TextBox Background="Transparent" Foreground="White" BorderThickness="0" />
-            </Border>
-
-            <!--Password-->
-            <TextBlock Text="Password" TextBlock.Foreground="White" Margin="5 5 0 5"/>
-            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
-                <TextBox Background="Transparent" Foreground="White" BorderThickness="0" />
-            </Border>
-            
-            <!--Buttons-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Button Content="Create Account" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3"/>
-                <Button Content="Sign In" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3"/>
-            </Grid>
-
-
+        <Frame x:Name="Main"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Button Height="150" Width="20" BorderBrush="Transparent" Background="#9e0054" />
         </StackPanel>
+        
     </Grid>
 
 </Window>
