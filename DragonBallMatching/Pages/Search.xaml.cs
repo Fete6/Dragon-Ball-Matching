@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DragonBallMatching.Pages
 {
     /// <summary>
-    /// Interaction logic for NewAccount_03.xaml
+    /// Interaction logic for Search.xaml
     /// </summary>
-    public partial class NewAccount_03 : Page
+    public partial class Search : Page
     {
-        public NewAccount_03()
+        public Search()
         {
             InitializeComponent();
         }

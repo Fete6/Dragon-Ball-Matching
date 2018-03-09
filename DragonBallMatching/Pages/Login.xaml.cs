@@ -26,7 +26,8 @@ namespace DragonBallMatching.Pages
         }
 
         private void Btn_CreateAccount_Click(object sender, RoutedEventArgs e) {
-            Main.Content = new NewAccount_01();
+            NewAccount_01 newAccount_01 = new NewAccount_01();
+            NavigationService.Navigate(newAccount_01); 
         }
     }
 }

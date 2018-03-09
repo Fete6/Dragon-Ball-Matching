@@ -16,21 +16,21 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" MinWidth="150"/>
+            <ColumnDefinition Width="*" MinWidth="170"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="2*" MinHeight="400"/>
-            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".3*" MinHeight="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="1" Grid.Row="1" >
 
             <!--Header-->
-            <TextBlock Text="Create account" FontWeight="Bold" FontSize="15" Foreground="White" Margin="5 0 0 5 "/>
+            <TextBlock Text="Create account" FontWeight="Bold" FontSize="15" Foreground="LightPink" Margin="5 0 0 5 "/>
             
             <!--Username-->
             <TextBlock Text="Username" TextBlock.Foreground="White" Margin="5 0 0 5 " />
@@ -42,14 +42,62 @@
             </Border>
 
             <!--Password-->
-            <TextBlock Text="Password" TextBlock.Foreground="White" Margin="5 5 0 5"/>
+            <TextBlock Text="Password" TextBlock.Foreground="White" Margin="5 10 0 5"/>
             <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
                 <PasswordBox Background="Transparent" Foreground="White" BorderThickness="0" />
             </Border>
+            
+            <!--Firstname-->
+            <TextBlock Text="First name" TextBlock.Foreground="White" Margin="5 10 0 5 " />
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <TextBox Background="Transparent" Foreground="White" BorderThickness="0" />
+            </Border>
 
+            <!--Lastname-->
+            <TextBlock Text="Last name" TextBlock.Foreground="White" Margin="5 10 0 5 " />
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <TextBox Background="Transparent" Foreground="White" BorderThickness="0" />
+            </Border>
+
+            <!--Birthday-->
+            <TextBlock Text="Birthday" TextBlock.Foreground="White" Margin="5 10 0 5 " />
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <DatePicker BorderThickness="0" />
+            </Border>
+
+            <!--Sex-->
+            <TextBlock Text="Sex" TextBlock.Foreground="White" Margin="5 10 0 5 " />
+            <StackPanel>
+                    
+                    <RadioButton GroupName="Sex" Foreground="White" Content="Male" IsChecked="True"/>
+                    <RadioButton GroupName="Sex" Foreground="White" Content="Female" />
+                    <RadioButton GroupName="Sex" Foreground="White" Content="Transsexual" />
+                </StackPanel>
+
+
+
+            <!--Area-->
+            <TextBlock Text="Area" TextBlock.Foreground="White" Margin="5 10 0 5 " />
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="#FFB4B4B4">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <ComboBox Text="Select Area" IsEditable="true" IsReadOnly="true" StaysOpenOnEdit="True">
+                </ComboBox>
+            </Border>
+     
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -61,12 +109,13 @@
         <!--Buttons-->
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            
 
-            <Button Content="Back" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3"/>
-            <Button Content="Next" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3"/>
+            <Button Content="Back" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3" Click="btn_Back_Click"/>
+            <Button Content="Next" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3" Click="btn_Next_Click"/>
         </Grid>
     </Grid>
 </Page>

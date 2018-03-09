@@ -23,6 +23,18 @@ namespace DragonBallMatching.Pages
         public NewAccount_01()
         {
             InitializeComponent();
+
+        }
+
+        private void btn_Next_Click(object sender, RoutedEventArgs e)
+        {
+            NewAccount_02 newAccount_02 = new NewAccount_02();
+            NavigationService.Navigate(newAccount_02);
+        }
+
+        private void btn_Back_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }
