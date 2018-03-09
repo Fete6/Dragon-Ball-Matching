@@ -5,10 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DragonBallMatching.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="800" d:DesignWidth="600"
       Title="Search">
 
     <Grid>
-        
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/loginbackground.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" MinWidth="170"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" MinHeight="400"/>
+            <RowDefinition Height=".3*" MinHeight="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </StackPanel>
+
+        <!--Buttons-->
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Back" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3" Click="btn_Back_Click"/>
+            <Button Content="Search" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3" Click="btn_Search_Click"/>
+        </Grid>
     </Grid>
 </Page>

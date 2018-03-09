@@ -67,7 +67,7 @@
             </Grid.ColumnDefinitions>
             
             <Button Content="Back" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3" Click="btn_Back_Click"/>
-            <Button Content="Create" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3" Click="btn_Search_Click"/>
+            <Button Content="Create" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3" Click="btn_Create_Click"/>
         </Grid>
     </Grid>
 </Page>
