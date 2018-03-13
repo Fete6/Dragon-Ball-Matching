@@ -1,9 +1,9 @@
-﻿<Page x:Class="DragonBallMatching.Pages.Login"
+﻿<Page x:Class="DragonBallMatching.Views.Login"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DragonBallMatching.Pages"
+      xmlns:local="clr-namespace:DragonBallMatching.Views"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="600"
       Title="Login">
@@ -61,7 +61,7 @@
 
                 <Button x:Name="Btn_CreateAccount" Click="Btn_CreateAccount_Click" Content="Create account" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3"/>
                 <Button Content="Sign in" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3"/>
-            </Grid>
+                </Grid>
         </StackPanel>
         </Grid>
     </Grid>

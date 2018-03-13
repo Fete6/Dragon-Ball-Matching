@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DragonBallMatching.Pages
+namespace DragonBallMatching.Views
 {
     /// <summary>
     /// Interaction logic for NewAccount_02.xaml
