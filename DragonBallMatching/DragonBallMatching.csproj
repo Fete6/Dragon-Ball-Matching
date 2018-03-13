@@ -64,6 +64,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="Dragon_Ball_MatchingDataSet_test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\AreaClass.cs" />
     <Compile Include="Models\ImageClass.cs" />
     <Compile Include="Models\LikeClass.cs" />
@@ -71,6 +76,7 @@
     <Compile Include="Models\MessageClass.cs" />
     <Compile Include="Models\SexClass.cs" />
     <Compile Include="Models\UserClass.cs" />
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -122,6 +128,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Dragon_Ball_MatchingDataSet_test.xsc">
+      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
+    </None>
+    <None Include="Dragon_Ball_MatchingDataSet_test.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dragon_Ball_MatchingDataSet_test.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dragon_Ball_MatchingDataSet_test.xss">
+      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

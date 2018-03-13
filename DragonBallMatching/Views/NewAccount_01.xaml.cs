@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace DragonBallMatching.Views
 {
@@ -23,6 +25,14 @@ namespace DragonBallMatching.Views
         public NewAccount_01()
         {
             InitializeComponent();
+
+
+            // TODO - For testing, to be moved from codebehind.
+
+            // Get table and assigns to combobox itemsource.
+            DataSet ds = Database.SQLCommandGet("select tableName1 from testtable");
+            SelectArea.DisplayMemberPath = "tableName1";
+            SelectArea.ItemsSource = ds.Tables[0].DefaultView;
 
         }
 

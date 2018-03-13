@@ -93,7 +93,7 @@
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
-                <ComboBox Text="Select Area" IsEditable="true" IsReadOnly="true" StaysOpenOnEdit="True">
+                <ComboBox Text="Select Area" x:Name="SelectArea" ItemsSource="{Binding}" IsEditable="true" IsReadOnly="true" StaysOpenOnEdit="True">
                 </ComboBox>
             </Border>
      

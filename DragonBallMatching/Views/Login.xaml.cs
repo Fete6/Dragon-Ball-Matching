@@ -26,7 +26,7 @@ namespace DragonBallMatching.Views
         {
             InitializeComponent();
         }
-        UserClass User = new UserClass("Frederik", "Christensen",DateTime.Today, );
+        //UserClass User = new UserClass("Frederik", "Christensen",DateTime.Today, );
 
         private void Btn_CreateAccount_Click(object sender, RoutedEventArgs e) {
             NewAccount_01 newAccount_01 = new NewAccount_01();
