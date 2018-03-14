@@ -70,21 +70,21 @@ namespace DragonBallMatching
 
         /// New functions
        
-        //private static string DataSource = "(local)";
-        private static string dataSource = ".\\SQLEXPRESS";
-        private static string connectionString = $@"Data Source = {dataSource}; Initial Catalog = Dragon_Ball_Matching; Integrated Security = True";
+        //private static string dataSource = "(local)";
+        ////private static string dataSource = ".\\SQLEXPRESS";
+        //private static string connectionString = $@"Data Source = {dataSource}; Initial Catalog = Dragon_Ball_Matching; Integrated Security = True";
 
-        public static DataSet SQLCommandGet(string query) {
-            SqlConnection con = new SqlConnection(connectionString);
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            return ds;
-        }
+        //public static DataSet SQLCommandGet(string query) {
+        //    SqlConnection con = new SqlConnection(connectionString);
+        //    SqlDataAdapter da = new SqlDataAdapter(query, con);
+        //    DataSet ds = new DataSet();
+        //    da.Fill(ds);
+        //    con.Close();
+        //    return ds;
+        //}
 
-        public static void SQLCommandSet(string query) {
+        //public static void SQLCommandSet(string query) {
 
-        }
+        //}
     }
 }

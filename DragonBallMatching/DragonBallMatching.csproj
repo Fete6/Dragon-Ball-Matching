@@ -34,9 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,20 +72,49 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AreaTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="Dragon_Ball_MatchingDataSet_test.Designer.cs">
+    <Compile Include="DragonBallDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
+      <DependentUpon>DragonBallDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DragonBallDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DragonBallDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LikesTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogonTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessagesTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AreaClass.cs" />
     <Compile Include="Models\ImageClass.cs" />
     <Compile Include="Models\LikeClass.cs" />
-    <Compile Include="Models\LogonClass.cs" />
+    <Compile Include="Models\LoginClass.cs" />
     <Compile Include="Models\MessageClass.cs" />
     <Compile Include="Models\SexClass.cs" />
     <Compile Include="Models\UserClass.cs" />
     <Compile Include="ObservableObject.cs" />
+    <Compile Include="SexTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -128,17 +166,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Dragon_Ball_MatchingDataSet_test.xsc">
-      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
+    <EntityDeploy Include="DragonBallDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DragonBallDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DragonBallDatabase.edmx.diagram">
+      <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
     </None>
-    <None Include="Dragon_Ball_MatchingDataSet_test.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Dragon_Ball_MatchingDataSet_test.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Dragon_Ball_MatchingDataSet_test.xss">
-      <DependentUpon>Dragon_Ball_MatchingDataSet_test.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,13 +190,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Shaq.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DragonBallDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DragonBallDatabase.Context.cs</LastGenOutput>
+      <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
+    </Content>
+    <Content Include="DragonBallDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
+      <LastGenOutput>DragonBallDatabase.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

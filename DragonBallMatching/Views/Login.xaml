@@ -40,7 +40,7 @@
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
-                <TextBox Background="Transparent" Foreground="White" BorderThickness="0" />
+                <TextBox Background="Transparent" Text="{Binding Username, Mode=OneWay}" Foreground="White" BorderThickness="0" />
             </Border>
 
             <!--Password-->
@@ -49,7 +49,7 @@
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
-                <PasswordBox Background="Transparent" Foreground="White" BorderThickness="0" />
+                    <PasswordBox Background="Transparent" x:Name="Passwordbox"  Foreground="White" BorderThickness="0" />
             </Border>
 
             <!--Buttons-->
@@ -60,7 +60,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="Btn_CreateAccount" Click="Btn_CreateAccount_Click" Content="Create account" Height="30" Grid.Column="0" Margin="0 15 2.5 5" BorderThickness="3"/>
-                <Button Content="Sign in" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3"/>
+                    <Button Content="Sign in" Height="30" Grid.Column="1" Margin="2.5 15 0 5" BorderThickness="3" Click="btn_SignIn_Click"/>
+                    <TextBlock Text="{Binding Username}"></TextBlock>
                 </Grid>
         </StackPanel>
         </Grid>

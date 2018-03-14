@@ -30,9 +30,9 @@ namespace DragonBallMatching.Views
             // TODO - For testing, to be moved from codebehind.
 
             // Get table and assigns to combobox itemsource.
-            DataSet ds = Database.SQLCommandGet("select tableName1 from testtable");
-            SelectArea.DisplayMemberPath = "tableName1";
-            SelectArea.ItemsSource = ds.Tables[0].DefaultView;
+            //DataSet ds = Database.SQLCommandGet("select tableName1 from testtable");
+            //SelectArea.DisplayMemberPath = "tableName1";
+            //SelectArea.ItemsSource = ds.Tables[0].DefaultView;
 
         }
 
