@@ -25,7 +25,7 @@ namespace DragonBallMatching.Views
     /// </summary>
     public partial class Login : Page 
     {
-
+        
         public Login()
         {
             InitializeComponent();
@@ -42,7 +42,18 @@ namespace DragonBallMatching.Views
 
         private void btn_SignIn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Passwordbox.Password);
+            LoginViewModel loginViewModeltest = new LoginViewModel();
+       
+            if (loginViewModeltest.CheckUsername(Usernamebox.Text))
+            {
+                Search search = new Search();
+                NavigationService.Navigate(search);
+            } else
+            {
+                MessageBox.Show("Brugernavn findes ikke");
+
+            }
+
         }
     }
 

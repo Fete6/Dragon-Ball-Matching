@@ -31,5 +31,6 @@ namespace DragonBallMatching
         public virtual DbSet<SexTable> SexTable { get; set; }
         public virtual DbSet<UsersTable> UsersTable { get; set; }
         public virtual DbSet<LogonTable> LogonTable { get; set; }
+        public virtual DbSet<ImagesTable> ImagesTable { get; set; }
     }
 }

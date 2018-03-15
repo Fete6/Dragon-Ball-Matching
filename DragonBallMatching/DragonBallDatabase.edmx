@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Dragon_Ball_MatchingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Dragon_Ball_MatchingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AreaTable">
           <Key>
             <PropertyRef Name="AreaID" />
@@ -12,12 +12,14 @@
           <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Area" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Dragon_Ball_Matching.dbo.ImagesTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="ImagesTable">
+          <Key>
+            <PropertyRef Name="ImageNotImportant" />
+          </Key>
+          <Property Name="ImageNotImportant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ImageID" Type="int" />
-          <Property Name="Images" Type="image" />
-        </EntityType>-->
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="LikesTable">
           <Key>
             <PropertyRef Name="Sender" />
@@ -71,9 +73,18 @@ warning 6002: The table/view 'Dragon_Ball_Matching.dbo.LogonTable' does not have
           <Property Name="Sex_FK" Type="int" Nullable="false" />
           <Property Name="Area_FK" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-error 6004: The table 'Dragon_Ball_Matching.dbo.ImagesTable' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ImagesTab__Image__34C8D9D1" />-->
+        <Association Name="FK__ImagesTab__Image__35BCFE0A">
+          <End Role="UsersTable" Type="Self.UsersTable" Multiplicity="0..1" />
+          <End Role="ImagesTable" Type="Self.ImagesTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTable">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ImagesTable">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <!--Errors Found During Generation:
 warning 6035: The relationship 'FK__LikesTabl__recie__2F10007B' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
         <Association Name="FK__LikesTabl__recie__2F10007B" />-->
@@ -124,6 +135,7 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
         </Association>
         <EntityContainer Name="Dragon_Ball_MatchingModelStoreContainer">
           <EntitySet Name="AreaTable" EntityType="Self.AreaTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImagesTable" EntityType="Self.ImagesTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LikesTable" EntityType="Self.LikesTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessagesTable" EntityType="Self.MessagesTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SexTable" EntityType="Self.SexTable" Schema="dbo" store:Type="Tables" />
@@ -135,6 +147,10 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
     [LogonTable].[PWD] AS [PWD]
     FROM [dbo].[LogonTable] AS [LogonTable]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__ImagesTab__Image__35BCFE0A" Association="Self.FK__ImagesTab__Image__35BCFE0A">
+            <End Role="UsersTable" EntitySet="UsersTable" />
+            <End Role="ImagesTable" EntitySet="ImagesTable" />
+          </AssociationSet>
           <AssociationSet Name="FK__LogonTabl__UserI__2B3F6F97" Association="Self.FK__LogonTabl__UserI__2B3F6F97">
             <End Role="UsersTable" EntitySet="UsersTable" />
             <End Role="LogonTable" EntitySet="LogonTable" />
@@ -148,8 +164,7 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
             <End Role="UsersTable" EntitySet="UsersTable" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Dragon_Ball_MatchingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -205,6 +220,7 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
           <NavigationProperty Name="AreaTable" Relationship="Self.FK__UsersTabl__Area___286302EC" FromRole="UsersTable" ToRole="AreaTable" />
           <NavigationProperty Name="SexTable" Relationship="Self.FK__UsersTabl__Sex_F__276EDEB3" FromRole="UsersTable" ToRole="SexTable" />
           <NavigationProperty Name="LogonTable" Relationship="Self.FK__LogonTabl__UserI__2B3F6F97" FromRole="UsersTable" ToRole="LogonTable" />
+          <NavigationProperty Name="ImagesTable" Relationship="Dragon_Ball_MatchingModel.FK__ImagesTab__Image__35BCFE0A" FromRole="UsersTable" ToRole="ImagesTable" />
         </EntityType>
         <EntityType Name="LogonTable">
           <Key>
@@ -272,7 +288,33 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
             <End Role="UsersTable" EntitySet="UsersTable" />
             <End Role="LogonTable" EntitySet="LogonTable" />
           </AssociationSet>
+          <EntitySet Name="ImagesTable" EntityType="Dragon_Ball_MatchingModel.ImagesTable" />
+          <AssociationSet Name="FK__ImagesTab__Image__35BCFE0A" Association="Dragon_Ball_MatchingModel.FK__ImagesTab__Image__35BCFE0A">
+            <End Role="UsersTable" EntitySet="UsersTable" />
+            <End Role="ImagesTable" EntitySet="ImagesTable" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ImagesTable">
+          <Key>
+            <PropertyRef Name="ImageNotImportant" />
+          </Key>
+          <Property Name="ImageNotImportant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UsersTable" Relationship="Dragon_Ball_MatchingModel.FK__ImagesTab__Image__35BCFE0A" FromRole="ImagesTable" ToRole="UsersTable" />
+        </EntityType>
+        <Association Name="FK__ImagesTab__Image__35BCFE0A">
+          <End Type="Dragon_Ball_MatchingModel.UsersTable" Role="UsersTable" Multiplicity="0..1" />
+          <End Type="Dragon_Ball_MatchingModel.ImagesTable" Role="ImagesTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTable">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ImagesTable">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -336,6 +378,15 @@ warning 6035: The relationship 'FK__MessagesT__Sende__31EC6D26' has columns that
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="PWD" ColumnName="PWD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImagesTable">
+            <EntityTypeMapping TypeName="Dragon_Ball_MatchingModel.ImagesTable">
+              <MappingFragment StoreEntitySet="ImagesTable">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImageNotImportant" ColumnName="ImageNotImportant" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

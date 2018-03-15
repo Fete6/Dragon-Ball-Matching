@@ -18,6 +18,7 @@ namespace DragonBallMatching
         public UsersTable()
         {
             this.LogonTable = new HashSet<LogonTable>();
+            this.ImagesTable = new HashSet<ImagesTable>();
         }
     
         public int UserID { get; set; }
@@ -34,5 +35,7 @@ namespace DragonBallMatching
         public virtual SexTable SexTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LogonTable> LogonTable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ImagesTable> ImagesTable { get; set; }
     }
 }

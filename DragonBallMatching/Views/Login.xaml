@@ -40,7 +40,7 @@
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
-                <TextBox Background="Transparent" Text="{Binding Username, Mode=OneWay}" Foreground="White" BorderThickness="0" />
+                <TextBox Background="Transparent" x:Name="Usernamebox" Text="{Binding Username, Mode=OneWay}" Foreground="White" BorderThickness="0" />
             </Border>
 
             <!--Password-->

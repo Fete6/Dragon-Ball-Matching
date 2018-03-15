@@ -72,9 +72,9 @@ Create table UsersTable
 	UserID int primary key identity(1,1) not null,
 	FirstName nvarchar(30) not null,
 	LastName nvarchar(30) not null,
-	Birthday datetime not null,
-	StartDate datetime not null,
-	EndDate datetime,
+	Birthday smalldatetime not null,
+	StartDate smalldatetime not null,
+	EndDate smalldatetime,
 	ShortStory nvarchar(100),	
 	Sex_FK int foreign key references SexTable(SexID) not null,	
 	Area_FK int foreign key references AreaTable(AreaID) not null,	
@@ -130,7 +130,7 @@ Create table MessagesTable
 	Sender_message nvarchar(30) foreign key references LogonTable(Username) not null,
 	reciever_message nvarchar(30) foreign key references LogonTable(Username) not null,
 	IsRead_message bit,  
-	StartDate_message datetime not null,
+	StartDate_message smalldatetime not null,
 	Constraint PK_Sender_Reciever_message Primary key (Sender_message,Reciever_message) 	
 )
 go
@@ -149,8 +149,9 @@ go
  go
 Create table ImagesTable
 (
+	ImageNotImportant int primary key identity(1,1),
 	ImageID int foreign key references UsersTable(UserID),
-	Images image	
+	Images nvarchar(50)	
 )
 go
 
@@ -158,22 +159,21 @@ use Dragon_Ball_Matching
 go
 
 
---Testing, delete this table when done!
-
-create table testtable (tableID int primary key identity(1,1), tableName1 nvarchar(20), tableName2 nvarchar(20))
-go
-
-
-insert into testtable values ( 'john', 'fido' )
-insert into testtable values ( 'else', 'gunner' )
-insert into testtable values ( 'sømand svend', 'svede hans' )
 
 insert into AreaTable values ( 'Region Hovedstaden')
 insert into AreaTable values ( 'Region Midtjylland')
 insert into AreaTable values ( 'Region Syddanmark')
 insert into AreaTable values ( 'Region Nordjylland')
-insert into AreaTable values ( 'Region Sjælland')
+insert into AreaTable values ( 'Region SjÃ¦lland')
 
-select * from testtable
 
-select * from testtable
+insert into SexTable values ('m')
+
+
+insert into UsersTable values ( 'Frederik', 'Christensen', GetDate(), Getdate(), null,'hejsa', 1, 2)
+
+
+insert into LogonTable values (1,'fete6','123')
+
+
+

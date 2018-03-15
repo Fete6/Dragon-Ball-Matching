@@ -91,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ImagesTable.cs">
+      <DependentUpon>DragonBallDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="LikesTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
