@@ -17,8 +17,8 @@ namespace DragonBallMatching
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UsersTable()
         {
-            this.LogonTable = new HashSet<LogonTable>();
-            this.ImagesTable = new HashSet<ImagesTable>();
+            this.ImagesTables = new HashSet<ImagesTable>();
+            this.LogonTables = new HashSet<LogonTable>();
         }
     
         public int UserID { get; set; }
@@ -32,10 +32,10 @@ namespace DragonBallMatching
         public int Area_FK { get; set; }
     
         public virtual AreaTable AreaTable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ImagesTable> ImagesTables { get; set; }
         public virtual SexTable SexTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LogonTable> LogonTable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImagesTable> ImagesTable { get; set; }
+        public virtual ICollection<LogonTable> LogonTables { get; set; }
     }
 }

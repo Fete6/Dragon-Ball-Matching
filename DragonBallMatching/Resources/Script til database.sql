@@ -94,7 +94,7 @@ Create table LogonTable
 (
 	UserID int foreign key references UsersTable(UserID) not null,
 	Username nvarchar(30) unique not null,
-	PWD nvarchar(40) not null	
+	PWD nvarchar(64) not null	
 )
 go
 
@@ -173,7 +173,7 @@ insert into SexTable values ('m')
 insert into UsersTable values ( 'Frederik', 'Christensen', GetDate(), Getdate(), null,'hejsa', 1, 2)
 
 
-insert into LogonTable values (1,'fete6','123')
+insert into LogonTable values (1,'fete6','9e1a55b02c98b3af99f2ba82b52eda69eda2a6cc7e5014a37194150f9a443e59')
 
 
-
+Select * from LogonTable

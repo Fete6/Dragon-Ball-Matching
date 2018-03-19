@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBallMatching.Models
-{
-    class MessageClass
-    {
+namespace DragonBallMatching.ViewModels {
+    class CreateAccountViewModel : BaseViewModel {
     }
 }

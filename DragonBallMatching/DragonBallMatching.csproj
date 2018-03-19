@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1CEF688-CBC9-45AC-93C9-B55010790997}</ProjectGuid>
+    <ProjectGuid>{7B893734-60AD-4981-A5F7-A0C3DD140EE1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DragonBallMatching</RootNamespace>
     <AssemblyName>DragonBallMatching</AssemblyName>
@@ -35,15 +35,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -64,18 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="AreaTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
     <Compile Include="DragonBallDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IHavePassword.cs" />
     <Compile Include="ImagesTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
@@ -103,55 +94,56 @@
     <Compile Include="MessagesTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AreaClass.cs" />
-    <Compile Include="Models\ImageClass.cs" />
-    <Compile Include="Models\LikeClass.cs" />
-    <Compile Include="Models\LoginClass.cs" />
-    <Compile Include="Models\MessageClass.cs" />
-    <Compile Include="Models\SexClass.cs" />
-    <Compile Include="Models\UserClass.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="ObservableObject.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="SexTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="UsersTable.cs">
       <DependentUpon>DragonBallDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateAccountViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="SearchViewModel.cs" />
+    <Compile Include="Views\CreateAccountView.xaml.cs">
+      <DependentUpon>CreateAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Login.xaml">
+    <Page Include="Views\CreateAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewAccount_02.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\NewAccount_01.xaml">
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Search.xaml">
+    <Page Include="Views\SearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NewAccount_02.xaml.cs">
-      <DependentUpon>NewAccount_02.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NewAccount_01.xaml.cs">
-      <DependentUpon>NewAccount_01.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Search.xaml.cs">
-      <DependentUpon>Search.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -186,32 +178,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\loginbackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\Shaq.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="DragonBallDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DragonBallDatabase.Context.cs</LastGenOutput>
       <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
+      <LastGenOutput>DragonBallDatabase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DragonBallDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DragonBallDatabase.edmx</DependentUpon>
       <LastGenOutput>DragonBallDatabase.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\Script til database.sql" />
+    <Resource Include="Images\loginbackground.jpg" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\Shaq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

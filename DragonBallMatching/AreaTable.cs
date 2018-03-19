@@ -17,13 +17,13 @@ namespace DragonBallMatching
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AreaTable()
         {
-            this.UsersTable = new HashSet<UsersTable>();
+            this.UsersTables = new HashSet<UsersTable>();
         }
     
         public int AreaID { get; set; }
         public string Area { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersTable> UsersTable { get; set; }
+        public virtual ICollection<UsersTable> UsersTables { get; set; }
     }
 }

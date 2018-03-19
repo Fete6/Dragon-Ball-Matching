@@ -25,12 +25,12 @@ namespace DragonBallMatching
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AreaTable> AreaTable { get; set; }
-        public virtual DbSet<LikesTable> LikesTable { get; set; }
-        public virtual DbSet<MessagesTable> MessagesTable { get; set; }
-        public virtual DbSet<SexTable> SexTable { get; set; }
-        public virtual DbSet<UsersTable> UsersTable { get; set; }
-        public virtual DbSet<LogonTable> LogonTable { get; set; }
-        public virtual DbSet<ImagesTable> ImagesTable { get; set; }
+        public virtual DbSet<AreaTable> AreaTables { get; set; }
+        public virtual DbSet<ImagesTable> ImagesTables { get; set; }
+        public virtual DbSet<LikesTable> LikesTables { get; set; }
+        public virtual DbSet<MessagesTable> MessagesTables { get; set; }
+        public virtual DbSet<SexTable> SexTables { get; set; }
+        public virtual DbSet<UsersTable> UsersTables { get; set; }
+        public virtual DbSet<LogonTable> LogonTables { get; set; }
     }
 }

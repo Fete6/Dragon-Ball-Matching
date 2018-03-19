@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBallMatching.Models
-{
-    class LikeClass
-    {
+namespace DragonBallMatching.ViewModels {
+    public abstract class BaseViewModel : ObservableObject {
     }
 }

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBallMatching.Models
-{
-    class AreaClass
-    {
+namespace DragonBallMatching {
+    public interface IHavePassword {
+        System.Security.SecureString Password { get; }
     }
 }

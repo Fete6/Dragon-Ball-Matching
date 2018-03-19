@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DragonBallMatching.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,25 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DragonBallMatching.Views
-{
+namespace DragonBallMatching.Views {
     /// <summary>
-    /// Interaction logic for Search.xaml
+    /// Interaction logic for SearchView.xaml
     /// </summary>
-    public partial class Search : Page
-    {
-        public Search()
-        {
+    public partial class SearchView : UserControl {
+        public SearchView() {
             InitializeComponent();
-        }
-
-        private void btn_Search_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void btn_Back_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
+            DataContext = new SearchViewModel();
         }
     }
 }

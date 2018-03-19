@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonBallMatching.Models
-{
-    class SexClass
-    {
+namespace DragonBallMatching.ViewModels {
+    public class SearchViewModel : BaseViewModel {
+
     }
 }
